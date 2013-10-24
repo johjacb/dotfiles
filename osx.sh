@@ -29,7 +29,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 # # Menu bar: hide the useless Time Machine and Volume icons
-# defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # # Set highlight color to green
 # defaults write NSGlobalDomain AppleHighlightColor -string '0.764700 0.976500 0.568600'
@@ -52,7 +52,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # # Expand save panel by default
-# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # # Expand print panel by default
 # defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
@@ -77,7 +77,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # # Disable the crash reporter
-# #defaults write com.apple.CrashReporter DialogType -string "none"
+defaults write com.apple.CrashReporter DialogType -string "none"
 
 # # Set Help Viewer windows to non-floating mode
 # defaults write com.apple.helpviewer DevMode -bool true
@@ -98,7 +98,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # systemsetup -setcomputersleep Off > /dev/null
 
 # # Check for software updates daily, not just once per week
-# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # # Disable Notification Center and remove the menu bar icon
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
@@ -175,20 +175,20 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # ###############################################################################
 
 # # Require password immediately after sleep or screen saver begins
-# defaults write com.apple.screensaver askForPassword -int 1
-# defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # # Save screenshots to the desktop
 # defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
 # # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-# defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string "png"
 
 # # Disable shadow in screenshots
 # defaults write com.apple.screencapture disable-shadow -bool true
 
 # # Enable subpixel font rendering on non-Apple LCDs
-# defaults write NSGlobalDomain AppleFontSmoothing -int 2
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # # Enable HiDPI display modes (requires restart)
 # sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
@@ -219,7 +219,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # defaults write com.apple.finder ShowStatusBar -bool true
 
 # # Finder: show path bar
-# defaults write com.apple.finder ShowPathBar -bool true
+defaults write com.apple.finder ShowPathBar -bool true
 
 # # Finder: allow text selection in Quick Look
 # defaults write com.apple.finder QLEnableTextSelection -bool true
@@ -228,7 +228,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # # When performing a search, search the current folder by default
-# defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # # Disable the warning when changing a file extension
 # defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -275,9 +275,9 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
 
-# # Use list view in all Finder windows by default
+# # Use column view in all Finder windows by default
 # # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-# defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # # Disable the warning before emptying the Trash
 # defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -307,7 +307,7 @@ chflags nohidden ~/Library
 # defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # # Set the icon size of Dock items to 36 pixels
-# defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 36
 
 # # Enable spring loading for all Dock items
 # defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -318,7 +318,7 @@ chflags nohidden ~/Library
 # # Wipe all (default) app icons from the Dock
 # # This is only really useful when setting up a new Mac, or if you don’t use
 # # the Dock to launch apps.
-# #defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps -array
 
 # # Don’t animate opening applications from the Dock
 # defaults write com.apple.dock launchanim -bool false
@@ -348,7 +348,7 @@ defaults write com.apple.dock no-glass -bool true
 defaults write com.apple.dock autohide -bool true
 
 # # Make Dock icons of hidden applications translucent
-# defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.dock showhidden -bool true
 
 # # Reset Launchpad
 # find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
@@ -515,9 +515,9 @@ defaults write com.apple.dock autohide -bool true
 # # Kill affected applications                                                  #
 # ###############################################################################
 
-# for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-# 	"Mail" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
-# 	"Twitter" "iCal" "iTunes"; do
-# 	killall "$app" > /dev/null 2>&1
-# done
-# echo "Done. Note that some of these changes require a logout/restart to take effect."
+for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
+ 	"Mail" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
+ 	"Twitter" "iCal" "iTunes"; do
+ 	killall "$app" > /dev/null 2>&1
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
